@@ -1,0 +1,321 @@
+* {
+    margin: 0;                      /* Elimina cualquier margen predeterminado del navegador */
+    padding: 0;                     /*Elimina cualquier relleno interno predeterminado del navegador */
+    box-sizing: border-box;         /* Incluye padding y border en el tamaño total de los elementos */
+}
+:root {
+    --fondo-navegacion: #F0FFF0;        /* Color de fondo de la barra de navegación */
+    --color-letras-naveg:  #01504d;      /* Color de texto en la barra de navegación */
+    --color-verde-num-letras: #369f76;  /* Color verde para el número de teléfono */
+    --color-fondo-iconos:  #1da77c;
+    --fondo: #effff5;
+    --color-texto: white;
+    --color_boton: #1aaa74;
+    --color-formato-texto: #8c8c8c;
+}
+body {
+    margin: 0 auto;                     /* Centra el contenido horizontalmente si hay un ancho fijo */
+    font-family: 'Poppins', sans-serif; /* Fuente principal */
+    background-color: var(--fondo);
+}
+/*------------- Barra de navegación ----------------------------*/
+/* Contenedor principal de la barra de navegación */
+.navegacion {
+    width: 100%;                                     /* Ocupa todo el ancho de la pantalla */
+    height: 80px;                                    /* Altura fija de la barra */
+    background-color: var(--fondo-navegacion);       /* Usa la variable para el color de fondo */
+    position: relative;                              /* Permite posicionar elementos hijos como el teléfono con position: absolute */
+}
+/* Contenedor de los enlaces de navegación */
+.links_nave {
+    display: inline-block;      /* Se comporta como un bloque en línea */
+    margin-left: 200px;         /* Empuja el bloque de enlaces hacia la derecha */
+    line-height: 80px;          /* Centra verticalmente los enlaces en la barra */
+}
+.links_nave a {
+    margin: 0 15px;                         /* Espaciado horizontal entre enlaces */
+    text-decoration: none;                  /* Elimina subrayado */
+    color: var(--color-letras-naveg);       /* Color de texto definido en variables */
+    font-weight: bold;                      /* Texto en negrita */
+    padding-left: 6vw;                      /* Espacio interno a la izquierda relativo al ancho de la ventana (6% del viewport) */
+}
+/* Contenedor del bloque de número de teléfono */
+.phone {
+    position: absolute;             /* Se posiciona respecto al contenedor padre (.navegacion) */
+    right: 30px;                    /* Se ubica 30px desde el borde derecho */
+    top: 50%;                       /* Centrado verticalmente */
+    transform: translateY(-50%);    /* Ajusta para centrar completamente en el eje Y (lo mueve hacia arriba la mitad de su altura) */
+    display: inline-block;          /* Permite que contenga otros elementos en línea */
+}
+/* Imagen del icono telefónico */
+.phone img {
+    vertical-align: middle;         /* Alinea verticalmente con el texto */
+    height: 24px;                   /* Altura fija para la imagen */
+    margin-right: 10px;             /* Espacio entre la imagen y el número */
+}
+/* Número de teléfono */
+.phone h2 {
+    display: inline;                            /* Permite que el número esté en la misma línea que la imagen */
+    font-size: 16px;                            /* Tamaño de fuente del número */
+    color: var(--color-verde-num-letras);       /* Usa el color verde definido */
+    vertical-align: middle;                     /* Alinea con la imagen */
+}
+/*----------------------------------------------------------------------------*/
+
+/*------------- Navegación lado izquierdo --------------------*/
+/* Contenedor principal de la barra lateral izquierda */
+.naveg_Izquierda {
+    position: fixed;                                        /* Se mantiene fija en la pantalla al hacer scroll */
+    top: 0;                                                 /* Pegada al borde superior */
+    left: 0;                                                /* Pegada al borde izquierdo */
+    width: 70px;                                            /* Ancho fijo de la barra lateral */
+    height: 100vh;                                          /* Altura del 100% del pantalla */
+    background-color: var(--color-letras-naveg);            /* Color de fondo con variable */
+    text-align: center;                                     /* Centra el contenido horizontalmente */
+}
+.home {
+    padding-top: 20px; /* Espacio superior para separar del borde */
+}
+/* Contenedor de los íconos de redes sociales */
+.logos_redes_sociales {
+    position: absolute;     /* Posicionamiento absoluto dentro de la barra lateral */
+    bottom: 30px;           /* Pegado a 30px del borde inferior */
+    width: 100%;            /* Ocupa todo el ancho de la barra lateral */
+    text-align: center;     /* Centra los íconos horizontalmente */
+}
+/* Primer ícono o Imagen de la lista de redes sociales */
+.logos_redes_sociales ul li:first-of-type {
+    background-color: var(--color-fondo-iconos); /* Fondo del ícono */
+    border-radius: 6px;                          /* Bordes redondeados */
+    position: absolute;                          /* Posicionamiento absoluto */
+    top: 0;                                      /* Pegado al borde superior */
+    left: 30%;                                   /* Alineado al 30% del ancho del contenedor */
+    transform: translateY(-1300%);               /* Desplaza el ícono hacia arriba en un 1300% de su altura */
+}
+/* última imagen en la lista de redes sociales */
+.logos_redes_sociales ul li:last-of-type img {
+    width: 40px;        /* Establece el ancho de la imagen a 40px */
+    height: 40px;       /* Establece la altura de la imagen a 40px */
+}
+.logos_redes_sociales li img {
+    background-color: var(--color-fondo-iconos);    /* Fondo de los íconos */
+    border-radius: 6px;                             /* Bordes redondeados */
+}
+/* Lista sin viñetas ni espacio adicional */
+.logos_redes_sociales ul {
+    list-style: none;   /* Elimina los puntos de lista */
+    padding: 0;         /* Elimina el padding por defecto */
+    margin: 0;          /* Elimina el margen por defecto */
+}
+
+/* Espaciado entre íconos de redes sociales */
+.logos_redes_sociales li {
+    margin: 20px 0;     /* Espacio vertical entre cada ícono */
+}
+
+/* Tamaño uniforme de los íconos de redes sociales */
+.logos_redes_sociales img {
+    width: 28px;        /* Establece el ancho de las imagenes a 28px */
+    height: 28px;       /* Establece la altura de las imagenes a 28px */
+}
+/*----------------------------------------------------------------------------*/
+/*------------- Main --------------------*/
+/* Estilo principal del contenedor */
+main {
+    width: 100%;                 /* Ocupa todo el ancho del contenedor padre */
+    display: block;              /* Se asegura que se comporte como un bloque */
+    margin-left: 120px;          /* Desplaza el contenido hacia la derecha */
+}
+
+/*-------------izquierda --------------------*/
+.lado_izquierdo {
+    width: 49%;                                                 /* Ocupa aproximadamente la mitad del ancho */
+    height: 82vh;                                               /* Altura proporcional a la ventana del navegador */
+    float: left;                                                /* Flota a la izquierda */
+    padding: 0;                                                 /* Sin espacio interno */
+    margin-left: 10px;                                          /* Margen izquierdo reducido */
+    position: relative;                                         /* Necesario si se posiciona contenido hijo */
+    background-image: url(Imagenes/clinica-odontologia.webp);   /* Imagen de fondo */
+    background-size: cover;                                     /* Cubre todo el contenedor */
+    background-repeat: no-repeat;                               /* No se repite la imagen */
+    background-position: center;                                /* Centrada tanto horizontal como verticalmente */
+}
+/* Capa de superposición con sombra (oscurecida) */
+.contenido_Izquierdo {
+    background-color: rgba(35, 79, 76, 0.7);    /* Sombra semitransparente sobre la imagen */
+    height: 100%;                                 /* Ocupa toda la altura del contenedor padre */
+    width: 100%;                                  /* Ocupa todo el ancho del contenedor padre */
+    padding: 30px;                                /* Espaciado interno */
+    box-sizing: border-box;                       /* Incluye padding dentro del tamaño total */
+}
+/* Título principal dentro del contenedor izquierdo */
+.lado_izquierdo h1 {
+    margin-top: 190px;                       /* Separación superior */
+    font-size: 2em;                          /* Tamaño grande de fuente */
+    text-align: left;                        /* Alineación a la izquierda */
+    color: var(--color-texto);              /* Color del texto definido por variable CSS */
+}
+/* Párrafos dentro del contenedor izquierdo */
+.lado_izquierdo p {
+    font-size: 1.1em;                        /* Tamaño de fuente ligeramente mayor al normal */
+    text-align: left;                        /* Alineación a la izquierda */
+    color: var(--color-texto);              /* Color del texto definido por variable CSS */
+}
+/* Contenedor de botones */
+.Botones {
+    margin-top: -150px;                      /* Superposición hacia arriba */
+    margin-left: 50px;                       /* Margen izquierdo para alinear los botones */
+}
+/* Botón con fondo sólido */
+.boton1 {
+    margin-right: 10px;                      /* Espacio entre botones */
+    padding: 10px 20px;                      /* Espaciado interno (vertical y horizontal) */
+    background-color: var(--color_boton);   /* Color de fondo usando variable */
+    border: none;                            /* Sin borde */
+    color: white;                            /* Texto en blanco */
+    cursor: pointer;                         /* Cursor tipo puntero */
+    border-radius: 50px;                     /* Bordes redondeados */
+}
+/* Emoji en el botón1 */
+.boton1::after {
+    content: "➡️";                           /* Agrega un emoji de flecha al final del texto */
+    font-size: 15px;                         /* Tamaño del emoji */
+    padding-left: 5px;                       /* Espacio entre el texto y el emoji */
+}
+/* Botón con fondo transparente y borde */
+.boton2 {
+    margin-right: 10px;                      /* Espacio entre botones */
+    padding: 10px 20px;                      /* Espaciado interno */
+    background-color: rgba(0, 0, 0, 0);      /* Fondo completamente transparente */
+    border: 2px solid var(--color_boton);   /* Borde de color usando variable */
+    color: var(--color_boton);              /* Texto del mismo color que el borde */
+    cursor: pointer;                         /* Cursor tipo puntero */
+    border-radius: 50px;                     /* Bordes redondeados */
+}
+/* Emoji en el botón2 */
+.boton2::after {
+    content: "➡️";                           /* Emoji de flecha */
+    font-size: 15px;                         /* Tamaño del emoji */
+    padding-left: 5px;                       /* Espacio entre texto y emoji */
+}
+/* Efecto hover para ambos botones */
+.Botones button:hover {
+    background-color: #45a049;              /* Color de fondo más oscuro al pasar el mouse */
+}
+/*------------- Contenedor Derecho --------------------*/
+.lado_derecho {
+    width: 38%;                    /* Ocupa el 38% del ancho del contenedor padre */
+    height: 82vh;                  /* Altura relativa al alto de la ventana */
+    float: left;                   /* Se posiciona a la izquierda dentro del contenedor */
+    padding: 30px;                 /* Espaciado interno uniforme */
+    background-color: var(--color-texto); /* Color de fondo definido por variable */
+    box-shadow: 1px 1px 20px 1px #000; /* Sombra para profundidad visual */
+    text-align: justify;          /* Justifica el texto dentro del contenedor */
+}
+/*------------- Título en la sección derecha --------------------*/
+.lado_derecho h2 {
+    color: var(--color_boton);     /* Color del texto definido por variable */
+    text-align: center;            /* Centrado horizontal del texto */
+    font-size: 1.5em;              /* Tamaño del texto relativo */
+    margin-bottom: 20px;           /* Espacio inferior respecto al elemento siguiente */
+    margin-top: 30px;              /* Espacio superior respecto al borde o elemento anterior */
+}
+/*------------- Formulario dentro de la sección derecha --------------------*/
+.lado_derecho form {
+    margin-top: 10px;              /* Espacio superior respecto al título */
+}
+/*------------- Etiquetas de los campos en grupo 1 --------------------*/
+.form-group1 label {
+    display: block;                /* Fuerza a ocupar toda la línea */
+    margin-bottom: 5px;            /* Espacio entre la etiqueta y el input */
+    font-style: italic;            /* Estilo cursiva */
+    color: var(--color-formato-texto); /* Color del texto definido por variable */
+    text-align: left;              /* Alineación a la izquierda */
+    margin-left: 15px;             /* Separación del borde izquierdo */
+    padding: 5px;                  /* Relleno interior */
+}
+/*------------- Inputs en grupo 1 (First Name / Last Name) --------------------*/
+.form-group1 input {
+    display: inline-block;         /* Permite colocarlos lado a lado */
+    width: 50%;                    /* Ocupa la mitad del contenedor */
+    padding: 10px;                 /* Espaciado interior */
+    border: none;                  /* Sin borde exterior */
+    border-radius: 50px;           /* Bordes redondeados */
+    background-color: #efefef;     /* Fondo gris claro */
+    margin-bottom: 10px;           /* Espacio inferior entre campos */
+}
+/*------------- Contenedores de First Name y Last Name --------------------*/
+.nombre_apellido {
+    float: left;                   /* Acomoda los elementos uno al lado del otro */
+    width: 48%;                    /* Ancho de cada campo */
+    margin-left: 1%;               /* Separación entre los campos */
+    padding: 5px;                  /* Espaciado interior */
+}
+/*------------- Etiquetas de los campos Email y Contact --------------------*/
+.form-group2, .form-group3 label {
+    display: block;               /* Hace que las etiquetas ocupen toda la línea */
+    margin-bottom: 5px;           /* Espacio entre la etiqueta y el input */
+    font-style: italic;           /* Aplica estilo cursiva al texto */
+    color: var(--color-formato-texto); /* Color de texto definido por la variable */
+    text-align: left;             /* Alinea el texto de las etiquetas a la izquierda */
+    margin-left: 15px;            /* Espaciado de la etiqueta desde el borde izquierdo */
+    padding: 5px;                 /* Añade espaciado interior a la etiqueta */
+}
+/*------------- Inputs de Email y Contact --------------------*/
+.form-group2 input,
+.form-group3 input {
+    display: block;               /* Hace que los inputs se comporten como bloques (ocupan toda la línea) */
+    width: 85%;                   /* Ancho de los inputs, 85% del contenedor */
+    padding: 10px;                /* Añade espaciado interior al input */
+    border: none;                 /* Elimina los bordes por defecto */
+    border-radius: 50px;          /* Bordes redondeados */
+    background-color: #efefef;    /* Fondo gris claro */
+}
+/*------------- Etiquetas para los campos de Fecha y Hora --------------------*/
+.form-group4 label {
+    display: block;               /* Hace que la etiqueta ocupe toda la línea */
+    margin-bottom: 5px;           /* Espacio entre la etiqueta y el input */
+    font-style: italic;           /* Aplica estilo cursiva al texto */
+    color: var(--color-formato-texto); /* Color del texto definido por la variable */
+    text-align: left;             /* Alinea las etiquetas a la izquierda */
+    margin-left: 15px;            /* Espaciado de la etiqueta desde el borde izquierdo */
+    padding: 5px;                 /* Añade espaciado interior a la etiqueta */
+}
+/*------------- Inputs de Fecha y Hora --------------------*/
+.form-group4 input {
+    display: inline-block;        /* Los inputs se muestran en línea, junto a otros elementos */
+    width: 70%;                   /* El ancho del input es el 70% del contenedor */
+    padding: 10px;                /* Añade espaciado interior al input */
+    border: none;                 /* Elimina los bordes por defecto */
+    border-radius: 50px;          /* Bordes redondeados */
+    background-color: #efefef;    /* Fondo gris claro */
+}
+/*------------- Contenedor de Fecha y Hora --------------------*/
+.fecha_tiempo {
+    float: left;                  /* Hace que los elementos se alineen a la izquierda */
+    width: 48%;                   /* El contenedor ocupa el 48% del ancho disponible */
+    margin-left: 1%;              /* Espaciado entre los campos de fecha y hora */
+}
+/*------------- Botón de Envío con emoji al final --------------------*/
+.boton3::after {
+    content: "➡️";                /* Agrega un emoji de flecha al final del contenido */
+    font-size: 15px;              /* Tamaño del emoji */
+    padding-left: 5px;            /* Añade espacio entre el texto y el emoji */
+}
+/*------------- Estilo del botón de envío --------------------*/
+button[type="submit"] {
+    width: 10vw;                  /* El ancho del botón es relativo al 10% del ancho de la ventana */
+    padding: 10px;                /* Añade espaciado interior al botón */
+    background-color: var(--color_boton); /* Color de fondo del botón, definido por la variable */
+    border: none;                 /* Elimina los bordes por defecto */
+    border-radius: 50px;          /* Bordes redondeados */
+    color: white;                 /* Color del texto (blanco) */
+    cursor: pointer;             /* Cambia el cursor a mano (puntero) cuando se pasa sobre el botón */
+    margin-top: 50px;             /* Espaciado superior entre el botón y el elemento anterior */
+    margin-left: 150px;           /* Desplazamiento a la derecha, desde el borde izquierdo */
+}
+/*------------- Efecto hover para el botón de envío --------------------*/
+button[type="submit"]:hover {
+    background-color: #45a049;    /* Cambia el color de fondo a un verde más oscuro al pasar el cursor sobre el botón */
+}
+
