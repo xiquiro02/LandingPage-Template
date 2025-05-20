@@ -319,30 +319,25 @@ button[type="submit"]:hover {
     background-color: #45a049;    /* Cambia el color de fondo a un verde más oscuro al pasar el cursor sobre el botón */
 }
 /* MEDIA QUERIES PARA DISEÑO RESPONSIVE */
-/* móviles (max-width: 768px) */
-@media (max-width: 768px){
+/* móviles (max-width: 480px) */
+@media (max-width: 480px){
     /* Ajusta el alto del contenedor de navegación y alinea el texto a la izquierda */
     .navegacion {
         height: auto;
         text-align: left;
     }
-    /* Centra los enlaces de navegación y los muestra en línea */
+    /* Centra los enlaces de navegación */
     .links_nave {
         margin: 0 auto;
-        display: inline-block;
     }
     /* Disminuye el tamaño de fuente de los enlaces y elimina el padding izquierdo */
     .links_nave a {
-        font-size: 15px;
+        font-size: 16px;
         padding-left: 0;
+        display: block;
     }
-    /* Reduce el tamaño del texto y de la imagen en la sección del teléfono */
-    .phone h2 {
-        font-size: 12px;
-    }
-    /* Reduce la altura a 20px de la imagen dentro de phone */
-    .phone img {
-        height: 20px;
+    .phone{
+        display: none; /* Oculta el número de teléfono en pantallas pequeñas */
     }
     /* Oculta la barra de navegación izquierda para ahorrar espacio */
     .naveg_Izquierda {
@@ -352,32 +347,35 @@ button[type="submit"]:hover {
     main {
         margin-left: 0;
         display: block;
+        font-size: 12px; /* Tamaño de fuente reducido para pantallas pequeñas */
     }
     /* Las secciones izquierda y derecha se expanden al 100% y se apilan verticalmente */
     .lado_izquierdo, .lado_derecho {
-        width: 100%;
-        float: none;
-        height: 800px; /* Puedes ajustar esta altura según el contenido */
+        width: 99%;
+        height: 550px;           /* Puedes ajustar esta altura según el contenido */
         margin-left: 0;
     }
     /* Centra los botones y elimina márgenes innecesarios */
     .Botones {
         margin-left: 0;
         text-align: center;
+
+    }
+    form{
+        font-size: 12px;
     }
     /* Los inputs se expanden al ancho completo */
     .form-group1 input, .form-group2 input, .form-group3 input, .form-group4 input {
-        width: 100%;
+        width: 50%;
     }
     /* Las secciones de nombre/apellido y fecha/tiempo se apilan en vertical */
     .nombre_apellido, .fecha_tiempo {
-        width: 100%;
-        float: none;
+        width: 50%;
         margin-left: 0;
     }
     /* Botón de enviar ocupa el 50% del ancho y se centra gracias al texto centrado del contenedor */
     button[type="submit"] {
-        width: 50%;
+        width: 30%;
     }
 }
   /* Pantallas medianas (tablets) */
@@ -385,10 +383,14 @@ button[type="submit"]:hover {
     /* Reduce el ancho de la barra lateral izquierda */
     .naveg_Izquierda {
         width: 60px;
+        height: 115vh; /* Mantiene la altura completa */
     }
     /* Ajusta el margen de los enlaces de navegación */
     .links_nave {
         margin-left: 50px;
+    }
+        .phone{
+        display: none; /* Oculta el número de teléfono en pantallas pequeñas */
     }
     /* Secciones laterales se muestran con menor ancho y centrado de contenido */
     .lado_izquierdo, .lado_derecho {
@@ -407,6 +409,7 @@ button[type="submit"]:hover {
     }
     /* Botón de envío más grande para tablets */
     button[type="submit"] {
-        width: 70%;
+        margin-right: 200px; /* Espacio entre el botón y el borde */
+        width: 60%;
     }
   }
